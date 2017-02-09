@@ -11,10 +11,24 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.words_list);
 
         ArrayList<Word> words = new ArrayList<>();
 
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
