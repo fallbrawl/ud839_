@@ -15,11 +15,11 @@ public class NumbersActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("wowo","wpwpw"));
-        words.add(new Word("wowo","wpwpw"));
-        words.add(new Word("wowo","wpwpw"));
-        words.add(new Word("wowo","wpwpw"));
-        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw",R.drawable.number_eight));
+        words.add(new Word("wowo","wpwpw",R.drawable.number_five));
+        words.add(new Word("wowo","wpwpw",R.drawable.number_four));
+        words.add(new Word("wowo","wpwpw",R.drawable.number_nine));
+        words.add(new Word("wowo","wpwpw",R.drawable.number_six));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
@@ -39,7 +39,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         WordAdapter wordsNumbersAdapter = new WordAdapter(this, words);
 
-        ListView listView = (ListView) findViewById(R.id.list_view_numbers);
+        ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(wordsNumbersAdapter);
 
     }

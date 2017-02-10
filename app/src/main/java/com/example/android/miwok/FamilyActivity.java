@@ -15,11 +15,11 @@ public class FamilyActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("wowo","wpwpw"));
-        words.add(new Word("wowo","wpwpw"));
-        words.add(new Word("wowo","wpwpw"));
-        words.add(new Word("wowo","wpwpw"));
-        words.add(new Word("wowo","wpwpw"));
+        words.add(new Word("wowo","wpwpw",R.drawable.family_daughter));
+        words.add(new Word("wowo","wpwpw",R.drawable.family_father));
+        words.add(new Word("wowo","wpwpw",R.drawable.family_grandmother));
+        words.add(new Word("wowo","wpwpw",R.drawable.family_grandfather));
+        words.add(new Word("wowo","wpwpw",R.drawable.family_son));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
@@ -39,7 +39,7 @@ public class FamilyActivity extends AppCompatActivity {
 
         WordAdapter wordsNumbersAdapter = new WordAdapter(this, words);
 
-        ListView listView = (ListView) findViewById(R.id.list_view_numbers);
+        ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(wordsNumbersAdapter);
     }
 }

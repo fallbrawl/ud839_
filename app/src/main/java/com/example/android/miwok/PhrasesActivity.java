@@ -39,7 +39,7 @@ public class PhrasesActivity extends AppCompatActivity {
 
         WordAdapter wordsNumbersAdapter = new WordAdapter(this, words);
 
-        ListView listView = (ListView) findViewById(R.id.list_view_numbers);
+        ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(wordsNumbersAdapter);
     }
 }
