@@ -1,25 +1,35 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
+    private MediaPlayer mediaPlayer = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.words_list);
 
-        ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("wowo","wpwpw",R.drawable.number_eight));
-        words.add(new Word("wowo","wpwpw",R.drawable.number_five));
-        words.add(new Word("wowo","wpwpw",R.drawable.number_four));
-        words.add(new Word("wowo","wpwpw",R.drawable.number_nine));
-        words.add(new Word("wowo","wpwpw",R.drawable.number_six));
+        words.add(new Word("wowo","wpwpw",R.drawable.number_eight, R.raw.color_black));
+        words.add(new Word("wowo","wpwpw",R.drawable.number_five,R.raw.color_brown));
+        words.add(new Word("wowo","wpwpw",R.drawable.number_four, R.raw.color_dusty_yellow));
+//        words.add(new Word("wowo","wpwpw",R.drawable.number_nine));
+//        words.add(new Word("wowo","wpwpw",R.drawable.number_six));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
@@ -37,10 +47,23 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
 
-        WordAdapter wordsNumbersAdapter = new WordAdapter(this, words);
+
+
+        WordAdapter wordsNumbersAdapter = new WordAdapter(this, words, R.color.category_numbers);
 
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(wordsNumbersAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.v("wow","wwww");
+                Toast.makeText(NumbersActivity.this, "playin", Toast.LENGTH_LONG).show();
+                Word neededWord = words.get(position);
+                mediaPlayer = MediaPlayer.create(NumbersActivity.this, neededWord.getSoundId() );
+                mediaPlayer.start();
+            }
+        });
 
     }
 }

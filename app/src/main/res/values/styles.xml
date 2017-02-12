@@ -30,4 +30,17 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
+
+    <style name="ListItemImageStyle">
+        <item name="android:layout_height">@dimen/list_item_height</item>
+        <item name="android:layout_width">@dimen/list_item_height</item>
+        <item name="android:background">@color/tan_background</item>
+    </style>
+
+    <style name="ListItemTextPackStyle">
+        <item name="android:layout_height">@dimen/list_item_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
 </resources>

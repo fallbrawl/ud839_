@@ -3,30 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/list_item_height"
+    >
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ListItemImageStyle"
         android:id="@+id/image_list_item"
         />
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="16dp">
+        android:id="@+id/list_item_background"
+        style="@style/ListItemTextPackStyle">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             tools:text="miwok"
+            android:gravity="bottom"
             android:id="@+id/miwok_list_item"
+            android:paddingLeft="16dp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18sp"
             />
 
         <TextView
+            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="translation"
             android:id="@+id/translation_list_item"
+            android:paddingLeft="16dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             />
     </LinearLayout>
 

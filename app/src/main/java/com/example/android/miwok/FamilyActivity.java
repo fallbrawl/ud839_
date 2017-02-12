@@ -13,13 +13,13 @@ public class FamilyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.words_list);
 
-        ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("wowo","wpwpw",R.drawable.family_daughter));
-        words.add(new Word("wowo","wpwpw",R.drawable.family_father));
-        words.add(new Word("wowo","wpwpw",R.drawable.family_grandmother));
-        words.add(new Word("wowo","wpwpw",R.drawable.family_grandfather));
-        words.add(new Word("wowo","wpwpw",R.drawable.family_son));
+//        words.add(new Word("wowo","wpwpw",R.drawable.family_daughter));
+//        words.add(new Word("wowo","wpwpw",R.drawable.family_father));
+//        words.add(new Word("wowo","wpwpw",R.drawable.family_grandmother));
+//        words.add(new Word("wowo","wpwpw",R.drawable.family_grandfather));
+//        words.add(new Word("wowo","wpwpw",R.drawable.family_son));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
@@ -37,7 +37,7 @@ public class FamilyActivity extends AppCompatActivity {
         words.add(new Word("wowo","wpwpw"));
         words.add(new Word("wowo","wpwpw"));
 
-        WordAdapter wordsNumbersAdapter = new WordAdapter(this, words);
+        WordAdapter wordsNumbersAdapter = new WordAdapter(this, words,R.color.category_family);
 
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(wordsNumbersAdapter);
