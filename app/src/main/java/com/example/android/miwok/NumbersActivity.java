@@ -14,11 +14,37 @@ import java.util.ArrayList;
 public class NumbersActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer = null;
+    private MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            Toast.makeText(NumbersActivity.this, "iM DONE!", Toast.LENGTH_LONG).show();
+            Log.v("wow","wwww");
+            releaseMediaPlayer();
+        }
+    };
+
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mediaPlayer = null;
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.words_list);
@@ -48,7 +74,6 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("wowo","wpwpw"));
 
 
-
         WordAdapter wordsNumbersAdapter = new WordAdapter(this, words, R.color.category_numbers);
 
         ListView listView = (ListView) findViewById(R.id.list_view);
@@ -57,13 +82,16 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.v("wow","wwww");
-                Toast.makeText(NumbersActivity.this, "playin", Toast.LENGTH_LONG).show();
+                releaseMediaPlayer();
                 Word neededWord = words.get(position);
                 mediaPlayer = MediaPlayer.create(NumbersActivity.this, neededWord.getSoundId() );
                 mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(onCompletionListener);
+
             }
         });
+
+
 
     }
 }
