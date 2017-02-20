@@ -12,7 +12,8 @@
         />
     <LinearLayout
         android:id="@+id/list_item_background"
-        style="@style/ListItemTextPackStyle">
+        style="@style/ListItemTextPackStyle"
+        android:layout_weight="3">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +37,21 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             />
+
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/play_button_for_color"
+        >
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_play_arrow_white_24dp"/>
+    </RelativeLayout>
+
 
 
 </LinearLayout>

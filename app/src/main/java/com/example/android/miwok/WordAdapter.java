@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,6 +59,9 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView translationTextView = (TextView) convertView.findViewById(R.id.translation_list_item);
         translationTextView.setText(currentWord.getDefaultTranslation());
         translationTextView.setBackgroundColor(color);
+
+        RelativeLayout linearLayoutForColorPlay = (RelativeLayout) convertView.findViewById(R.id.play_button_for_color);
+        linearLayoutForColorPlay.setBackgroundColor(color);
 
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
         ImageView iconView = (ImageView) convertView.findViewById(R.id.image_list_item);
