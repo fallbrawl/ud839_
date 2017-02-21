@@ -12,6 +12,7 @@ public class FamilyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.words_list);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         final ArrayList<Word> words = new ArrayList<>();
 

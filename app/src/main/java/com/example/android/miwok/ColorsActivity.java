@@ -14,6 +14,7 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.words_list);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         final ArrayList<Word> words = new ArrayList<>();
 
