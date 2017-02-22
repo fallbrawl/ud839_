@@ -72,7 +72,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.words_list);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
 
 
